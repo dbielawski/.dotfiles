@@ -39,6 +39,9 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 " lsp
 Plug 'neovim/nvim-lspconfig'
 
+" NERDTree
+Plug 'preservim/nerdtree'
+
 " Status bar
 Plug 'nvim-lualine/lualine.nvim'
 " If you want to have icons in your statusline choose one of these
@@ -48,15 +51,13 @@ call plug#end()
 
 inoremap { {}<left>
 inoremap {{ {
-inoremap [ {{<left>
+inoremap [ []<left>
 inoremap [[ [
-inoremap [] []
-inoremap ( ((<left>
+inoremap ( ()<left>
 inoremap " ""<left>
 inoremap "" "
 inoremap ' ''<left>
 inoremap ''  '
-inoremap < <><left>
 
 inoremap jj <Esc> 
 
@@ -65,6 +66,12 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" NerdTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " Telescope shortcuts
 " Find files using Telescope command-line sugar.
